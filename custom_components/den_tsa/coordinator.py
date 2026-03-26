@@ -3,6 +3,7 @@
 import asyncio
 import json
 import logging
+import ssl
 from dataclasses import dataclass
 
 import websockets
@@ -79,11 +80,18 @@ class DenTSAUpdateCoordinator:
 
     async def _async_listen_websocket(self) -> None:
         """Maintain WebSocket connection and process updates."""
+        # Create SSL context in executor to avoid blocking the event loop
+        ssl_context = await self.hass.async_add_executor_job(
+            ssl.create_default_context
+        )
+
         while not self._stop_requested.is_set():
             try:
                 _LOGGER.info("Connecting to DEN TSA WebSocket...")
                 async with websockets.connect(
-                    WS_URL, additional_headers=WS_HEADERS
+                    WS_URL,
+                    additional_headers=WS_HEADERS,
+                    ssl=ssl_context,
                 ) as ws:
                     _LOGGER.info("Connected to DEN TSA WebSocket")
 
