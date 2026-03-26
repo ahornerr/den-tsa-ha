@@ -4,6 +4,8 @@ A Home Assistant custom integration that maintains a WebSocket connection to the
 
 [![HACS Default](https://img.shields.io/badge/HACS-Default-orange.svg)](https://hacs.xyz/)
 
+![TSA Wait Times Dashboard](docs/screenshot.png)
+
 ## Features
 
 - **Real-time updates** via WebSocket (no polling, no rate limits)
