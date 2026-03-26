@@ -19,6 +19,6 @@ class DenTSAConfigFlow(ConfigFlow, domain=DOMAIN):
         self, user_input: dict | None = None
     ) -> FlowResult:
         if user_input is not None:
-            return self.async_create_entry(title="Denver Airport TSA Wait Times")
+            return self.async_create_entry(title="Denver Airport TSA Wait Times", data={})
 
         return self.async_show_form(step_id="user")
