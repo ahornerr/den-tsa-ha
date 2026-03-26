@@ -35,8 +35,6 @@ A Home Assistant custom integration that maintains a WebSocket connection to the
 | `sensor.den_tsa_east_precheck_wait` | East Security PreCheck lane wait time (min) |
 | `sensor.den_tsa_west_standard_wait` | West Security Standard lane wait time (min) |
 | `sensor.den_tsa_west_precheck_wait` | West Security PreCheck lane wait time (min) |
-| `sensor.den_tsa_south_standard_wait` | South Standard lane wait time (min) |
-| `sensor.den_tsa_south_precheck_wait` | South PreCheck lane wait time (min) |
 
 Wait times are expressed as **midpoints** of ranges from the API (e.g. "0-4" → 2.0, "1-5" → 3.0), making them numeric and suitable for history graphs.
 
@@ -126,38 +124,6 @@ cards:
           - color: red
             from: 9
             to: 30
-      - type: gauge
-        entity: sensor.den_tsa_south_standard_wait
-        name: South · Standard
-        min: 0
-        max: 30
-        needle: true
-        severity:
-          - color: green
-            from: 0
-            to: 9
-          - color: yellow
-            from: 9
-            to: 19
-          - color: red
-            from: 19
-            to: 30
-      - type: gauge
-        entity: sensor.den_tsa_south_precheck_wait
-        name: South · PreCheck ✓
-        min: 0
-        max: 30
-        needle: true
-        severity:
-          - color: green
-            from: 0
-            to: 4
-          - color: yellow
-            from: 4
-            to: 9
-          - color: red
-            from: 9
-            to: 30
   - type: history-graph
     title: Wait Time Trends
     hours_to_show: 12
@@ -170,10 +136,6 @@ cards:
         name: West Standard
       - entity: sensor.den_tsa_west_precheck_wait
         name: West PreCheck
-      - entity: sensor.den_tsa_south_standard_wait
-        name: South Standard
-      - entity: sensor.den_tsa_south_precheck_wait
-        name: South PreCheck
 ```
 
 ## How it works

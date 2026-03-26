@@ -64,26 +64,6 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         checkpoint="West Security",
         lane_type="PreCheck",
     ),
-    DenTSASensorEntityDescription(
-        key="south_standard_wait",
-        name="DEN TSA South Standard Wait",
-        icon="mdi:shield-account",
-        native_unit_of_measurement="min",
-        state_class=SensorStateClass.MEASUREMENT,
-        suggested_display_precision=1,
-        checkpoint="South",
-        lane_type="Standard",
-    ),
-    DenTSASensorEntityDescription(
-        key="south_precheck_wait",
-        name="DEN TSA South PreCheck Wait",
-        icon="mdi:shield-star",
-        native_unit_of_measurement="min",
-        state_class=SensorStateClass.MEASUREMENT,
-        suggested_display_precision=1,
-        checkpoint="South",
-        lane_type="PreCheck",
-    ),
 )
 
 
