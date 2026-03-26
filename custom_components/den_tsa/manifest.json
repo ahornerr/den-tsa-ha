@@ -1,0 +1,10 @@
+{
+  "domain": "den_tsa",
+  "name": "Denver Airport TSA Wait Times",
+  "version": "1.0.0",
+  "codeowners": [],
+  "dependencies": [],
+  "requirements": ["websockets>=11.0"],
+  "iot_class": "cloud_push",
+  "config_flow": true
+}
