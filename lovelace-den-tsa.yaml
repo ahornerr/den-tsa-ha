@@ -1,0 +1,140 @@
+type: vertical-stack
+cards:
+  # Header
+  - type: markdown
+    content: >
+      ## ✈️ DEN TSA Wait Times
+
+      _Updated in real-time_
+    style: |
+      ha-card {
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding-bottom: 0;
+      }
+
+  # Gauges
+  - type: grid
+    columns: 2
+    square: false
+    cards:
+      - type: gauge
+        entity: sensor.den_tsa_east_standard
+        name: East · Standard
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 9
+          - color: yellow
+            from: 9
+            to: 19
+          - color: red
+            from: 19
+            to: 30
+
+      - type: gauge
+        entity: sensor.den_tsa_east_precheck
+        name: East · PreCheck ✓
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 4
+          - color: yellow
+            from: 4
+            to: 9
+          - color: red
+            from: 9
+            to: 30
+
+      - type: gauge
+        entity: sensor.den_tsa_west_standard
+        name: West · Standard
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 9
+          - color: yellow
+            from: 9
+            to: 19
+          - color: red
+            from: 19
+            to: 30
+
+      - type: gauge
+        entity: sensor.den_tsa_west_precheck
+        name: West · PreCheck ✓
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 4
+          - color: yellow
+            from: 4
+            to: 9
+          - color: red
+            from: 9
+            to: 30
+
+      - type: gauge
+        entity: sensor.den_tsa_south_standard
+        name: South · Standard
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 9
+          - color: yellow
+            from: 9
+            to: 19
+          - color: red
+            from: 19
+            to: 30
+
+      - type: gauge
+        entity: sensor.den_tsa_south_precheck
+        name: South · PreCheck ✓
+        min: 0
+        max: 30
+        needle: true
+        severity:
+          - color: green
+            from: 0
+            to: 4
+          - color: yellow
+            from: 4
+            to: 9
+          - color: red
+            from: 9
+            to: 30
+
+  # History graph
+  - type: history-graph
+    title: Wait Time Trends
+    hours_to_show: 12
+    entities:
+      - entity: sensor.den_tsa_east_standard
+        name: East Standard
+      - entity: sensor.den_tsa_east_precheck
+        name: East PreCheck
+      - entity: sensor.den_tsa_west_standard
+        name: West Standard
+      - entity: sensor.den_tsa_west_precheck
+        name: West PreCheck
+      - entity: sensor.den_tsa_south_standard
+        name: South Standard
+      - entity: sensor.den_tsa_south_precheck
+        name: South PreCheck
