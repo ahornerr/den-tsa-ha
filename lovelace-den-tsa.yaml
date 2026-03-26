@@ -1,10 +1,8 @@
 type: vertical-stack
 cards:
-  # Header
   - type: markdown
-    content: >
-      ## ✈️ DEN TSA Wait Times
-
+    content: |
+      ## ✈ DEN TSA Wait Times
       _Updated in real-time_
     style: |
       ha-card {
@@ -13,14 +11,12 @@ cards:
         box-shadow: none;
         padding-bottom: 0;
       }
-
-  # Gauges
   - type: grid
     columns: 2
     square: false
     cards:
       - type: gauge
-        entity: sensor.den_tsa_east_standard
+        entity: sensor.den_tsa_east_standard_wait
         name: East · Standard
         min: 0
         max: 30
@@ -35,9 +31,8 @@ cards:
           - color: red
             from: 19
             to: 30
-
       - type: gauge
-        entity: sensor.den_tsa_east_precheck
+        entity: sensor.den_tsa_east_precheck_wait
         name: East · PreCheck ✓
         min: 0
         max: 30
@@ -52,9 +47,8 @@ cards:
           - color: red
             from: 9
             to: 30
-
       - type: gauge
-        entity: sensor.den_tsa_west_standard
+        entity: sensor.den_tsa_west_standard_wait
         name: West · Standard
         min: 0
         max: 30
@@ -69,9 +63,8 @@ cards:
           - color: red
             from: 19
             to: 30
-
       - type: gauge
-        entity: sensor.den_tsa_west_precheck
+        entity: sensor.den_tsa_west_precheck_wait
         name: West · PreCheck ✓
         min: 0
         max: 30
@@ -86,9 +79,8 @@ cards:
           - color: red
             from: 9
             to: 30
-
       - type: gauge
-        entity: sensor.den_tsa_south_standard
+        entity: sensor.den_tsa_south_standard_wait
         name: South · Standard
         min: 0
         max: 30
@@ -103,9 +95,8 @@ cards:
           - color: red
             from: 19
             to: 30
-
       - type: gauge
-        entity: sensor.den_tsa_south_precheck
+        entity: sensor.den_tsa_south_precheck_wait
         name: South · PreCheck ✓
         min: 0
         max: 30
@@ -120,21 +111,19 @@ cards:
           - color: red
             from: 9
             to: 30
-
-  # History graph
   - type: history-graph
     title: Wait Time Trends
     hours_to_show: 12
     entities:
-      - entity: sensor.den_tsa_east_standard
+      - entity: sensor.den_tsa_east_standard_wait
         name: East Standard
-      - entity: sensor.den_tsa_east_precheck
+      - entity: sensor.den_tsa_east_precheck_wait
         name: East PreCheck
-      - entity: sensor.den_tsa_west_standard
+      - entity: sensor.den_tsa_west_standard_wait
         name: West Standard
-      - entity: sensor.den_tsa_west_precheck
+      - entity: sensor.den_tsa_west_precheck_wait
         name: West PreCheck
-      - entity: sensor.den_tsa_south_standard
+      - entity: sensor.den_tsa_south_standard_wait
         name: South Standard
-      - entity: sensor.den_tsa_south_precheck
+      - entity: sensor.den_tsa_south_precheck_wait
         name: South PreCheck

@@ -25,7 +25,7 @@ class DenTSASensorEntityDescription(SensorEntityDescription):
 
 SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
     DenTSASensorEntityDescription(
-        key="east_standard",
+        key="east_standard_wait",
         name="DEN TSA East Standard Wait",
         icon="mdi:shield-account",
         native_unit_of_measurement="min",
@@ -35,7 +35,7 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         lane_type="Standard",
     ),
     DenTSASensorEntityDescription(
-        key="east_precheck",
+        key="east_precheck_wait",
         name="DEN TSA East PreCheck Wait",
         icon="mdi:shield-star",
         native_unit_of_measurement="min",
@@ -45,7 +45,7 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         lane_type="PreCheck",
     ),
     DenTSASensorEntityDescription(
-        key="west_standard",
+        key="west_standard_wait",
         name="DEN TSA West Standard Wait",
         icon="mdi:shield-account",
         native_unit_of_measurement="min",
@@ -55,7 +55,7 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         lane_type="Standard",
     ),
     DenTSASensorEntityDescription(
-        key="west_precheck",
+        key="west_precheck_wait",
         name="DEN TSA West PreCheck Wait",
         icon="mdi:shield-star",
         native_unit_of_measurement="min",
@@ -65,7 +65,7 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         lane_type="PreCheck",
     ),
     DenTSASensorEntityDescription(
-        key="south_standard",
+        key="south_standard_wait",
         name="DEN TSA South Standard Wait",
         icon="mdi:shield-account",
         native_unit_of_measurement="min",
@@ -75,7 +75,7 @@ SENSORS: tuple[DenTSASensorEntityDescription, ...] = (
         lane_type="Standard",
     ),
     DenTSASensorEntityDescription(
-        key="south_precheck",
+        key="south_precheck_wait",
         name="DEN TSA South PreCheck Wait",
         icon="mdi:shield-star",
         native_unit_of_measurement="min",
